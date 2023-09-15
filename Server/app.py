@@ -10,7 +10,10 @@ def predict_sentiment():
     data = request.get_json()
     sentiment = data.get('sentiment')
     prediction = utils.get_prediction(sentiment)
-    return prediction
+    if prediction == 1:
+        return "Positive Review"
+    else :
+        return "Negative Review"
 
 if __name__ == "__main__":
     print("Python server up and running")
